@@ -1,13 +1,19 @@
-from jikan import fetch_recommendation
+from pstats import SortKey
+from flask import *
+from modules.jikan import fetch_recommendation
+
+app = Flask(__name__)
 
 
-# Example
-MAL_ID = 50265
+@app.route("/")
+def home():
+    return json.dumps({"types": ["recommendation"]})
 
 
-def main():
-    fetch_recommendation(MAL_ID)
+@app.route('/recommendation/<int:MAL_ID>')
+def recommendation(MAL_ID):
+    return json.dumps(fetch_recommendation(MAL_ID), sort_keys=False)
 
 
 if __name__ == "__main__":
-    main()
+    app.run(port=5000)
