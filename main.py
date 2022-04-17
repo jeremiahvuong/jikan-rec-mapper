@@ -1,4 +1,3 @@
-from pstats import SortKey
 from flask import *
 from modules.jikan import fetch_recommendation
 
