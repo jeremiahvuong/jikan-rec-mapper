@@ -1,4 +1,4 @@
-from jikan import Jikan
+from jikan import fetch_recommendation
 
 
 # Example
@@ -6,7 +6,7 @@ MAL_ID = 50265
 
 
 def main():
-    Jikan.fetch_recommendation(MAL_ID)
+    fetch_recommendation(MAL_ID)
 
 
 if __name__ == "__main__":
