@@ -10,7 +10,7 @@ def home():
 
 
 @app.route('/recommendation/<int:MAL_ID>')
-def recommendation(MAL_ID):
+def recommendation(MAL_ID: int):
     return json.dumps(fetch_recommendation(MAL_ID), sort_keys=False)
 
 
